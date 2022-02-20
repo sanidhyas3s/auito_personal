@@ -1,51 +1,51 @@
 import 'package:flutter/material.dart';
 import 'interests.dart';
-class NeumorphismPage extends StatefulWidget {
-  const NeumorphismPage({Key? key}) : super(key: key);
 
+class InterestButton extends StatefulWidget {
+  Interest interest;//try to remove this
+  InterestButton({required this.interest});
   @override
-  State<NeumorphismPage> createState() => _NeumorphismPageState();
+  _InterestButtonState createState() => _InterestButtonState(interest: interest);
 }
 
-class _NeumorphismPageState extends State<NeumorphismPage> {
-  bool _isElevated = false;
-
+class _InterestButtonState extends State<InterestButton> {
+  Interest interest;
+  _InterestButtonState({required this.interest});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      body: Center(
-        child: GestureDetector(
-          onTap: () {
-            setState(() {
-              _isElevated = !_isElevated;
-            });
-          },
+      body: GestureDetector(
+        onTap: (){
+          setState(() {
+            interest.selected = !interest.selected;
+          });
+        },
+        child: Center(
           child: AnimatedContainer(
-            duration: const Duration(
-              milliseconds: 200,
-            ),
-            height: 200,
+            child: Text(interest.name),
+            duration: const Duration(milliseconds: 300),
+            height: 50,
             width: 200,
             decoration: BoxDecoration(
               color: Colors.grey[300],
               borderRadius: BorderRadius.circular(50),
-              boxShadow: _isElevated
-                  ? [
-                const BoxShadow(
-                  color: Colors.grey,
-                  offset: Offset(4, 4),
+              boxShadow: !interest.selected?
+              [
+                BoxShadow(
+                  color: Colors.grey[500]!,
+                  offset: const Offset(4,4),
                   blurRadius: 15,
                   spreadRadius: 1,
                 ),
                 const BoxShadow(
                   color: Colors.white,
-                  offset: Offset(-4, -4),
+                  offset: Offset(-4,-4),
                   blurRadius: 15,
                   spreadRadius: 1,
                 ),
               ]
-                  : null,
+                  :null,
             ),
           ),
         ),

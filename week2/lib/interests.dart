@@ -1,6 +1,6 @@
-class Interests {
+class Interest {
   String name;
   bool selected = false;
 
-  Interests({required this.name});
+  Interest({required this.name});
 }
