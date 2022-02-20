@@ -32,7 +32,9 @@ class _InterestsSelectionState extends State<InterestsSelection> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: InterestButton(interest: interests[2]),
+      body: Column(
+        children: interests.map((interest) => InterestButton(interest:interest)).toList(),
+      ),
     );
   }
 }

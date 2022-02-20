@@ -13,39 +13,42 @@ class _InterestButtonState extends State<InterestButton> {
   _InterestButtonState({required this.interest});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[300],
-      body: GestureDetector(
-        onTap: (){
-          setState(() {
-            interest.selected = !interest.selected;
-          });
-        },
-        child: Center(
-          child: AnimatedContainer(
-            child: Text(interest.name),
-            duration: const Duration(milliseconds: 300),
-            height: 50,
-            width: 200,
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-              borderRadius: BorderRadius.circular(50),
-              boxShadow: !interest.selected?
-              [
-                BoxShadow(
-                  color: Colors.grey[500]!,
-                  offset: const Offset(4,4),
-                  blurRadius: 15,
-                  spreadRadius: 1,
-                ),
-                const BoxShadow(
-                  color: Colors.white,
-                  offset: Offset(-4,-4),
-                  blurRadius: 15,
-                  spreadRadius: 1,
-                ),
-              ]
-                  :null,
+    return SizedBox(
+      height: 70,
+      child: Scaffold(
+        backgroundColor: Colors.grey[300],
+        body: GestureDetector(
+          onTap: (){
+            setState(() {
+              interest.selected = !interest.selected;
+            });
+          },
+          child: Center(
+            child: AnimatedContainer(
+              child: Text(interest.name),
+              duration: const Duration(milliseconds: 300),
+              height: 50,
+              width: 200,
+              decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: BorderRadius.circular(50),
+                boxShadow: !interest.selected?
+                [
+                  BoxShadow(
+                    color: Colors.grey[500]!,
+                    offset: const Offset(4,4),
+                    blurRadius: 15,
+                    spreadRadius: 1,
+                  ),
+                  const BoxShadow(
+                    color: Colors.white,
+                    offset: Offset(-4,-4),
+                    blurRadius: 15,
+                    spreadRadius: 1,
+                  ),
+                ]
+                    :null,
+              ),
             ),
           ),
         ),
