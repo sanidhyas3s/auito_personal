@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'interests.dart';
 
@@ -25,10 +26,18 @@ class _InterestButtonState extends State<InterestButton> {
           },
           child: Center(
             child: AnimatedContainer(
-              child: Text(interest.name),
+              child: Center(child: Text(
+                  interest.name,
+                  style: TextStyle(
+                    fontSize: 19,
+                    fontWeight: FontWeight.w500,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.grey[700]
+                  ),
+              )),
               duration: const Duration(milliseconds: 300),
               height: 50,
-              width: 200,
+              width: (16.0*(interest.name.length)),
               decoration: BoxDecoration(
                 color: Colors.grey[300],
                 borderRadius: BorderRadius.circular(50),
