@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'interests.dart';
 
@@ -35,7 +34,7 @@ class _InterestButtonState extends State<InterestButton> {
                     color: Colors.grey[700]
                   ),
               )),
-              duration: const Duration(milliseconds: 300),
+              duration: const Duration(milliseconds: 250),
               height: 50,
               width: (16.0*(interest.name.length)),
               decoration: BoxDecoration(
