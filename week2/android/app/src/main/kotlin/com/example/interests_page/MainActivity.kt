@@ -1,0 +1,6 @@
+package com.example.interests_page
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
