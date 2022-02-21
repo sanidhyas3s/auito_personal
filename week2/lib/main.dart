@@ -29,7 +29,7 @@ class _InterestsSelectionState extends State<InterestsSelection> {
     Interest(name: 'programming'),
     Interest(name: 'hip-hop'),
     Interest(name: 'basketball'),
-    Interest(name: 'basketball'),
+    Interest(name: 'basketball0'),
     Interest(name: 'basketball1'),
     Interest(name: 'basketball2'),
     Interest(name: 'basketball3'),
